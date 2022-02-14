@@ -1,0 +1,568 @@
+/****************************/
+/*** general to all pages ***/
+/****************************/
+/* 
+  function @font-face taken from http://www.phpascal.com/programmation-web/CSS/ajout-police.html 
+*/
+@font-face { 	
+  font-family: 'Libre Baskerville'; 	
+  src: url('../font/LibreBaskerville-Regular.ttf'); 
+}
+/*
+  End
+*/
+html {
+  /*background-image:URL(../img/background.jpg);*/
+  background-attachment: fixed;
+  color: ivory;
+}
+html body {
+  font-family:'Libre Baskerville', 'Times New Roman', Times, serif;
+  margin: 0px;
+  width: auto;
+  margin: auto;
+}
+.entete h1 {
+  height: 100px;
+  line-height: 70px;
+  padding-top: 10px;
+  margin: 0px;
+  text-align: center;
+  color: rgb(228, 228, 211);
+  background: linear-gradient(to bottom, #9c27b0, #ff5722);
+}
+.rouge {
+  color: brown;
+}
+.gras {
+  font-weight: bold;
+}
+/*figcaption {
+  text-align: center;
+}*/
+.def {
+  color: rgb(78, 78, 78);
+}
+footer {
+  text-align: center;
+  color: ivory;
+  border-radius: 0px 0px 4px 4px;
+  background-color: black;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+footer .rouge {
+  color: red;
+}
+footer img, .contact {
+  padding-top: 10px;
+  margin-right: 5px;
+}
+@media(max-width: 800px) {
+  .entete h1 {
+    font-size: 1.5em;
+    height: 50px;
+  }
+  footer {
+   font-size: 0.8em;
+  }
+}
+@media(max-width: 500px) {
+  .entete h1 {
+    font-size: 1.2em;
+    height: 30px;
+  }
+  footer {
+    font-size: 0.6em;
+   }
+}
+
+/***********************/
+/*** navigation menu ***/
+/***********************/
+/* Inspired by Peter Butcher's Week 3 code */
+.logo {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  color: #FFF;
+  font-weight: bold;
+  padding: 0px 15px;
+  text-decoration: none;
+}
+.logo .rouge {
+  color: red;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+}
+nav li {
+  list-style-type: none;
+  display: block;
+  float: left;
+  text-align: center;
+}
+nav li > ul {
+  display: none;
+  position: absolute;
+}  
+nav li li {
+  width: 65%;
+  text-align: left;
+  background-color: #444;
+}
+.menusand {
+  width: 90%;
+  text-align: left;
+  background-color: #444;
+}
+nav li:hover > ul {
+  display: block;  
+}
+nav {
+  float: right;
+  margin-right: 15px;
+}
+.menu {
+  display: block;
+  padding: 0px 15px;
+  height: 50px;
+  line-height: 50px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.menu:hover, .menusand:hover {
+  background-color:  #9c27b0;
+}
+header {
+  border-radius: 4px 4px 0px 0px;
+  height: 50px;
+  background-color:  black;
+  width: 100%;
+}
+@media(max-width: 800px) {
+  .logo, nav {
+    font-size: 0.7em;
+  }
+  header {
+    height: 50px;
+  }
+}
+@media(max-width: 500px) {
+  .logo, nav {
+    font-size: 0.6em;
+  }
+  header {
+    height: 50px;
+  }
+}
+
+/*****************/
+/*** home.html ***/
+/*****************/
+.introduction, .history {
+  text-align: justify;
+  font-size: 1.1em;
+}
+.origine {
+  width: 65%;
+  margin: auto;
+}
+article {
+  text-align: center;
+  margin: auto;
+}
+article h2, .origine h3 {
+  color: ivory;
+  background-color: brown;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 3px 3px 0px rgb(66, 32, 32);
+  padding: 5px 5px 5px 10px;
+  margin: 20px auto 20px auto;
+}
+.origine h3 {
+  width: 50%;
+}
+.origine h3 a {
+  color: ivory;
+}
+.origine h3 a:hover {
+  background-color: #444;
+  padding: 5px 0px 5px 0px;
+}
+.origine img {
+  width: 30%;
+  padding: 10px;
+  background-color: brown;
+  box-shadow: 3px 3px 0px rgb(66, 32, 32);
+}
+.origine figure {
+  text-align: center;
+}
+@media(max-width: 800px) {
+  article h2 {
+    font-size: 1em;
+  }
+  article h3 {
+    font-size: 0.9em;
+  }
+  .introduction, .history {
+    font-size: 0.8em;
+  }
+}
+@media(max-width: 500px) {
+  article h2 {
+    font-size: 0.8em;
+  }
+  article h3 {
+    font-size: 0.7em;
+  }
+  .introduction, .history {
+    font-size: 0.6em;
+  }
+}
+
+/******************/
+/*** bread.html ***/
+/******************/
+/*
+  Inspired by Peter Butcher's Week 7 code 
+*/
+/* We display flex the gallery of our images so that they are in line and spaced the same space each */
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 600px;
+  margin: auto;
+}
+/* We take each square that contains an image and a caption and we put it at the right size with a red outline and some shadow */
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: brown;
+  box-shadow: 5px 5px 0px rgb(66, 32, 32);
+}
+/* We adapt the image to 100% of the item size */
+.gallery-item img {
+  width: 100%;
+}
+/* Style the caption */
+.gallery-item caption {
+  margin-top: 5px;
+  font-size: 0.75em;
+  color: ivory;
+}
+/* <hen one of the items is selected, the background is changed to show which image is selected */
+.gallery-item:hover {
+  background: linear-gradient(to bottom right, white, #444);
+}
+/*
+  End
+*/
+.corps h2 {
+  color: ivory;
+  background-color: brown;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 3px 3px 0px rgb(66, 32, 32);
+  padding: 5px 5px 5px 10px;
+}
+.ingredients {
+    text-align: center;
+    width: 40%;
+    background-color: rgba(199, 152, 0, 0.336);
+}
+.ingredients ul {
+    text-align: left;
+}
+.deco {
+  width: 60%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: brown;
+  text-align: center;
+}
+.recipe {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;    
+    align-items: center;
+}
+.ingredients, .preparation {
+    padding: 0px;
+    border: solid;
+    border-color: brown;
+    border-radius: 10px 10px 10px 10px; 
+    box-shadow: 2px 2px 0px rgb(66, 32, 32);
+}
+.ingredients h3, .preparation h3 {
+    height: 30px;
+    text-align: center;
+    color: ivory;
+    background-color: brown;
+    border-radius: 8px 8px 0px 0px; 
+    margin: 0px;
+    padding-top: 10px;
+}
+.preparation {
+    width: 50%;
+    background-color: rgba(199, 152, 0, 0.336);
+}
+.preparation ol {
+  margin-right: 15px;
+}
+.corps {
+    width: 70%;
+    margin: auto;
+}
+.corps p {
+    text-align: justify;
+    font-size: 1.1em;
+}
+.htag {
+    text-decoration: underline;
+}
+@media(max-width: 800px) {
+  .gallery {
+    width: 100%;
+  }
+  .gallery-item {
+    width: 50%
+  }
+  .corps {
+    font-size: 0.8em;
+  }
+  .recipe {
+    flex-flow: column;
+  }
+  .ingredients {
+    margin-bottom: 10px;
+  }
+  .ingredients, .preparation {
+    width: 100%;
+  }
+}
+@media(max-width: 500px) {
+  .corps {
+    font-size: 0.6em;
+  }
+  .gallery-item {
+    width: 100%;
+  }
+}
+
+/*********************/
+/*** sandwich.html ***/
+/*********************/
+/*
+  Inspired by Peter Butcher's Week 7 code 
+*/
+.carousel {
+  /* Position in relation to other children and not body */
+  position: relative;
+  /* Same dimensions for all images */
+  width: 511px;
+  height: 324px;  
+  /* Blocks the view of other images */
+  overflow: hidden;
+  /* For centering the carousel */
+  margin: auto;
+  /* Style of the carouselle */
+  padding: 10px 0px 10px 0px;
+  background-color: brown;
+  border-radius: 8px;
+  box-shadow: 0px 4px 0px rgb(66, 32, 32);
+}
+.carousel-images {
+  /* For controle the position of my image in this container */
+  position: absolute;
+  /*
+    The z-index property can be used on elements with position: absolute;
+    It defines the order elements are stacked on the page (Z Axis).
+  */
+  z-index: 1; 
+  /* With position: absolute in left */
+  left: 0;
+  /* Total length of my images put together */
+  width: 4599px; 
+  /* Height of each image */
+  height: 324px;
+  /* Transition from one image to another */
+  transition: left .5s ease-in-out;
+}
+/* Dimension of my images */
+.carousel-images img {
+  width: 511px;
+  height: 324px;
+}
+.carousel nav {
+  /* This allows us to place the navigation over the images (But problematic if you want to insert links: you can click. So see line-height) */
+  position: absolute;
+  z-index: 2;  
+  width: 511px;
+  /* To click on an image of the carousel you have to decrease the height of nav to be able to access it. */
+  height: 200px;
+  /* Height of prev and next buttons. */
+  line-height: 285px;
+}  
+/* This gives or nav buttons some style. */
+.carousel nav a {
+  text-decoration: none;
+  color: ivory;
+  font-weight: bold;
+  font-size: 30pt;
+  padding: 0px 25px;
+  /* This transitions all properties that change when we hover */
+  transition: all .5s ease-in;
+  /* These properties are the ones that change on hover */
+  /* Transparent navigation arrow */
+  opacity: 0;
+  background-color: rgba(0,0,0,0);
+}
+/* Animation of the navigation buttons when hovering over them */
+.carousel nav:hover a {
+  /* Transition all the properties that change */
+  transition: all .5s ease-out;  
+  /* These properties are the ones that need to change back */
+  /* None transparent navigation arrow */
+  opacity: 1;
+  background-color: rgba(0,0,0,0.15);
+}
+/* Place the button on the left side of the carousel. */
+.carousel nav a:first-child {
+  float: left;
+}
+/* Place the button on the right side of the carousel. */
+.carousel nav a:last-child {
+  float: right;
+}
+/* Place the caption on the bottom-center of the carousel. */
+.carousel-caption {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  color: white;
+  background-color: rgba(0,0,0,0.25);
+  height: 50px;
+  line-height: 50px;
+  margin: 0px;
+}
+/*
+  End
+*/
+.carousel .carousel-caption {
+  text-align: center;
+}
+.carou p {
+  text-align: center;
+}
+.pain {
+  color: brown;
+}
+.mayo {
+  list-style: none;
+  font-weight: bold;
+}
+
+/*********************/
+/*** glossary.html ***/
+/*********************/
+.definition h3 {
+  color: ivory;
+  background-color: brown;
+  border-radius: 4px 4px 0px 0px;
+  padding: 5px 5px 5px 10px;
+  margin-bottom: 0px;
+  border: solid;
+  border-color: rgb(66, 32, 32);
+  box-shadow: 2px 2px 0px rgb(66, 32, 32);
+}
+.bloc {
+  text-align: center;
+}
+.definition p {
+  margin: 10px 0px 10px 30px;
+}
+.bloc video {
+  width: 500px;
+  margin-bottom: 10px;
+}
+.bloc img {
+  width: 500px;
+}
+.garniture {
+  padding: 10px;
+  background-color: brown;
+  box-shadow: 5px 5px 0px rgb(66, 32, 32);
+}
+@media(max-width: 800px) {
+  .bloc video, .bloc img {
+    width: 300px;
+  }
+}
+@media(max-width: 500px) {
+  .bloc video, .bloc img {
+    width: 200px;
+  }
+}
+
+h2 {
+  margin-left: 5%;
+}
+
+/*Actualité nucléaire*/
+.nucleaire {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.nucleaire h3 {
+  float: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: white;
+  text-align: center;
+  font-style: italic;
+  height: 35px;
+  line-height: 35px;
+  width: 58.9%;
+  background: linear-gradient(to bottom right, #9c27b0, #ff5722);
+  border-radius: 0px 8px 0px 0px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.nucleaire figure a img {
+  width: 400px;
+}
+
+.nucleaire figure {
+  float: left;
+  margin: 0px;
+}
+
+.nucleaire article {
+  margin: 0px;
+  height: 226px;
+  padding-top: 40px;
+  padding-left: 405px;
+  text-align: left;
+  color: black;
+  background-color: grey;
+  border-radius: 0px 8px 8px 0px;
+  font-size: 0.8em;
+}
+
+.nucleaire a {
+  font-size: 0.7em;
+}
